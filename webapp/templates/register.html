@@ -1,0 +1,92 @@
+{% extends 'index.html' %}
+<meta charset="UTF-8">
+{% block title%}
+    Register
+{% endblock title%}
+
+{% block content %}
+    <form action="#" method="POST" autocomplete="off">
+        {{ form.hidden_tag() }}
+        <div class="register-form" style="height: 550px;">
+            <h2 style="font-size: 35px;">Create an Account!</h2><br>
+            <div class="form-field">
+                {% if form.name.errors %}
+                    {{ form.name.label(style="margin-left: 150px;") }}<br>
+                    {{ form.name(style="height: 25px; width: 200px; margin-left: 80px; border: 1px solid red;") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.name.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.name.label(style="margin-left: 80px;") }}<br>
+                    {{ form.name(style="height: 25px; width: 200px; margin-left: 20px;") }}<br><br>
+                {% endif %}
+            </div>
+            <div class="form-field">
+                {% if form.email.errors %}
+                    {{ form.email.label(style="margin-left: 55px;") }}<br>
+                    {{ form.email(style="height: 25px; width: 200px; margin-left: 65px; border: 1px solid red;") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.email.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.email.label(style="margin-left: 30px;") }}<br>
+                    {{ form.email(style="height: 25px; width: 200px; margin-left: 35px;") }}<br><br>
+                {% endif %}
+            </div>
+            <div class="form-field">
+                {% if form.adm_no.errors %}
+                    {{ form.adm_no.label(style="margin-left: 170px;") }}<br>
+                    {{ form.adm_no(style="height: 25px; width: 200px; margin-left: 130px; border: 1px solid red;") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.adm_no.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.adm_no.label(style="margin-left: 60px;") }}<br>
+                    {{ form.adm_no(style="height: 25px; width: 200px; margin-left: 20px;") }}<br><br>
+                {% endif %}
+            </div>
+            <div class="form-field">
+                {{ form.std.label(style="margin-left: 35px;") }}<br>
+
+                {% if form.std.errors %}
+                {{ form.std(style="height: 25px; width: 100px; border: 1px solid red;") }}
+                <div class="invalid-feedback">
+                    {% for error in form.std.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.std(style="height: 25px; width: 100px;") }}<br><br>
+                {% endif %}
+            </div>
+            <div>
+                <br><br>{{ form.submit(class='register-submit')}}
+            </div>
+        </div>
+        <div>
+            <p style="font-size: 17px; margin-left: 430px;">
+                Already have an account?  <a href="{{ url_for('login') }}" class="link">Login</a>
+            </p>
+        </div>
+    </form>
+{% endblock content %}
+
+<!--<label for="name">Enter your name</label><br>-->
+<!--<input type="text" id="name" name="name" minlength="5" maxlength="50" pattern="[A-Za-z- ]+" title="Use your full name"-->
+<!--       style="height: 25px; width: 200px;" required><br><br>-->
+<!--<label for="email">Email ID provided by the school</label><br>-->
+<!--<input type="email" id="email" name="email" minlength="23" maxlength="40" title="Use the email id ending with @bhavanseroor.ac.in"-->
+<!--       placeholder=" eg:- midhunu@bhavanseroor.ac.in" pattern=".+@bhavanseroor\.ac\.in" style="height: 25px; width: 220px;" required ><br><br>-->
+<!--<label for="adm_no">Admission number</label><br>-->
+<!--<input type="text" id="adm_no" name="adm_no" minlength="4" maxlength="5" pattern="[0-9]+" title="Enter your school admission number"-->
+<!--       style="height: 25px; width: 70px;" placeholder=" eg:- 4500" required><br><br>-->
+<!--<label for="std">Class</label><br>-->
+<!--<input type="number" id="std" name="std" min="6" max="12" title="Enter your current class"-->
+<!--       style="height: 25px; width: 70px;" required ><br><br>-->
+<!--<input type="submit" value="Register" class="register-submit" style="height: 40px;">-->

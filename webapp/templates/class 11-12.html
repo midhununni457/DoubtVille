@@ -1,0 +1,48 @@
+{% extends 'doubtville.html' %}
+<meta charset="UTF-8">
+{% block title%}
+  {% if title %}
+    {{ title }}
+  {% else %}
+    <title>Class</title>
+  {% endif %}
+{% endblock title%}
+{% block content %}
+  <h1 style="margin: 60px 0 0 550px; font-size: 40px;">Select subject by stream</h1>
+  <h2 style="margin: 50px 0 0 50px; font-size: 35px;">Science Stream</h2>
+  <div style="display: inline-block">
+    <a href="#"><img src="./static/Icons/maths.png" alt="Maths" style="height: 145px; width: 145px; margin: 70px 0 0 100px; border-radius: 15px; box-shadow: 0px 2px 16px 3px rgba(0,0,0,0.2);"/></a>
+    <a href="#"><img src="./static/Icons/physics.png" alt="Physics" style="height: 140px; width: 140px; padding: 5px; margin: 70px 0 0 75px; border-radius: 15px; box-shadow: 0px 2px 16px 3px rgba(0,0,0,0.2);"/></a>
+    <a href="#"><img src="./static/Icons/chemistry.png" alt="Chemistry" style="height: 140px; width: 140px; padding: 5px; margin: 70px 0 0 75px; border-radius: 15px; box-shadow: 0px 2px 16px 3px rgba(0,0,0,0.2);"/></a>
+    <a href="#"><img src="./static/Icons/biology.png" alt="Biology" style="height: 140px; width: 140px; padding: 5px; margin: 70px 0 0 75px; border-radius: 15px; box-shadow: 0px 2px 16px 3px rgba(0,0,0,0.2);"/></a>
+    <a href="#"><img src="./static/Icons/computer.png" alt="Computer" style="height: 140px; width: 140px; padding: 5px; margin: 70px 0 0 75px; border-radius: 15px; box-shadow: 0px 2px 16px 3px rgba(0,0,0,0.2);"/></a>
+  </div>
+  <div style="display: inline;">
+    <h2 style="margin-left: 140px; line-height: 10px;">Maths</h2>
+    <h2 style="margin: -30px 0 0 365px; line-height: 10px;">Physics</h2>
+    <h2 style="margin: -10px 0 0 580px; line-height: 10px;">Chemistry</h2>
+    <h2 style="margin: -10px 0 0 820px; line-height: 10px;">Biology</h2>
+    <h2 style="margin: -10px 0 0 995px; line-height: 10px;">Computer Science</h2>
+  </div>
+  <h2 style="margin: 70px 0 0 50px; font-size: 35px;">Commerce Stream</h2>
+  <div style="display: inline-block">
+    <a href="#"><img src="./static/Icons/business.png" alt="Business" style="height: 140px; width: 140px; padding: 3px; margin: 70px 0 0 100px; border-radius: 15px; box-shadow: 0px 2px 16px 3px rgba(0,0,0,0.2);"/></a>
+    <a href="#"><img src="./static/Icons/economics.png" alt="Economics" style="height: 140px; width: 140px; padding: 3px; margin: 70px 0 0 75px; border-radius: 15px; box-shadow: 0px 2px 16px 3px rgba(0,0,0,0.2);"/></a>
+    <a href="#"><img src="./static/Icons/accountancy.png" alt="Accountancy" style="height: 140px; width: 140px; padding: 3px; margin: 70px 0 0 75px; border-radius: 15px; box-shadow: 0px 2px 16px 3px rgba(0,0,0,0.2);"/></a>
+    <a href="#"><img src="./static/Icons/computer.png" alt="Informatics" style="height: 140px; width: 140px; padding: 2px; margin: 70px 0 0 75px; border-radius: 15px; box-shadow: 0px 2px 16px 3px rgba(0,0,0,0.2);"/></a>
+    <a href="#"><img src="./static/Icons/maths.png" alt="Maths" style="height: 145px; width: 145px;  margin: 70px 0 0 75px; border-radius: 15px; box-shadow: 0px 2px 16px 3px rgba(0,0,0,0.2);"/></a>
+  </div>
+  <div style="display: inline;">
+    <h2 style="margin-left: 130px; line-height: 10px;">Business</h2>
+    <h2 style="margin: -30px 0 0 335px; line-height: 10px;">Economics</h2>
+    <h2 style="margin: -10px 0 0 560px; line-height: 10px;">Accountancy</h2>
+    <h2 style="margin: -10px 0 0 790px; line-height: 10px;">Informatics</h2>
+    <h2 style="margin: -10px 0 0 1040px; line-height: 10px;">Maths</h2>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+{% endblock %}

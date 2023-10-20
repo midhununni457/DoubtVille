@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+<meta charset="UTF-8">
+{% block title%}
+{{post.question}}
+{% endblock title%}
+
+{% block content %}
+<div  class="homepage-content" style="line-height: 17px; width: 1100px;">
+  <div style="margin: 10px 0 0 20px;">
+    <p style="display: inline;">Posted by {{post.author.name}}</p>
+    <small style="font-size: 85%;">on {{post.date_posted}}</small>
+    {% if current_user == post.author %}
+    <a  class="update-button" href="{{ url_for('update_question', post_id=post.id) }}">Update</a>
+    <div>
+      <a class="delete-button" href="#popup">Delete</a>
+    </div>
+    <div id="popup">
+      <div class="popup-content">
+        <h3 style="font-size: 25px; line-height: 20px; padding-top: 10px;">Are you sure you want to delete this post?</h3>
+        <div style="float:right; margin-top: 13%;">
+          <a href="#" style="background: #846ad9; " class="confirm-button">Cancel</a>
+          <a href="{{ url_for('delete_question', post_id=post.id) }}" class="confirm-button" style="background: #bd2f2f;">Delete</a>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    <p style="margin-top: 15px;">Class: {{post.post_std}}</p>
+    <p>Subject: {{ post.subject }}</p><br>
+    <h2 style="font-size: 180%; margin-top: -3px;">{{ post.question }}</h2>
+    <p>{{ post.content }}</p>
+  </div>
+  {% if images != [''] %}
+    {% for img in images %}
+    <img style='margin: 20px 0 20px 20px; max-width: 70%; max-height: 70%;' src="{{ url_for('static', filename='Users/' + user_id + img) }}">
+    {% endfor %}
+  {% endif %}
+</div>
+{% endblock content%}

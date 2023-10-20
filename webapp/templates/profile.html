@@ -1,0 +1,71 @@
+{% extends 'index.html' %}
+<meta charset="UTF-8">
+{% block title%}
+    Profile
+{% endblock title%}
+
+{% block content %}
+<div class="sidenav" style="margin: 75px 125px 0 0; width: 300px; height: 500px;">
+    <p style="font-size: 32px; text-align: center;">Browse by Class</p>
+    <div style="line-height: 40px;">
+        <a style="font-size: 28px;" href="{{ url_for('class6') }}">Class 6</a>
+        <a style="font-size: 28px;" href="{{ url_for('class7') }}">Class 7</a>
+        <a style="font-size: 28px;" href="{{ url_for('class8') }}">Class 8</a>
+        <a style="font-size: 28px;" href="{{ url_for('class9') }}">Class 9</a>
+        <a style="font-size: 28px;" href="{{ url_for('class10') }}">Class 10</a>
+        <a style="font-size: 28px;" href="{{ url_for('class11') }}">Class 11</a>
+        <a style="font-size: 28px;" href="{{ url_for('class12') }}">Class 12</a>
+    </div>
+    <br>
+</div>
+
+<div class="profile-section" style="height: 300px; width: 500px;">
+    <h1 style="margin: 0 0 20px 10px; padding-bottom:15px; border-bottom: 2px solid #bfbeba;">Profile</h1>
+    <div style="margin-left: 10px; line-height: 13px">
+        <p><b style="font-size: 17px;">Name:</b> {{ current_user.name }}</p>
+        <p><b style="font-size: 17px;">Class:</b> {{ current_user.std }}th</p>
+        <p><b style="font-size: 17px;">Email ID:</b> {{ current_user.email }}</p>
+        <p><b style="font-size: 17px;">Admission Number:</b> {{ current_user.adm_no }}</p>
+        <p style="font-size: 19px; margin-top: 25px;">Joined on {{ current_user.date_joined }}</p>
+    </div>
+</div>
+<div class="profile-section" style="height: 380px; width: 500px;">
+    <div style="margin-left: 10px;">
+        <form action="#" method="POST" autocomplete="off">
+            {{ form.hidden_tag() }}
+            <h2 style="font-size: 25px; margin: -30px 0 40px 0px; padding-bottom:15px; border-bottom: 2px solid #bfbeba;">Update Info</h2>
+            <div class="form-field">
+                {{ form.name.label }}<br>
+
+                {% if form.name.errors %}
+                {{ form.name(style="height: 25px; width: 200px; border: 1px solid red;") }}
+                <div class="invalid-feedback">
+                    {% for error in form.name.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.name(style="height: 25px; width: 200px;") }}<br><br>
+                {% endif %}
+            </div>
+            <div class="form-field">
+                {{ form.std.label }}<br>
+
+                {% if form.std.errors %}
+                {{ form.std(style="height: 25px; width: 100px; border: 1px solid red;") }}
+                <div class="invalid-feedback">
+                    {% for error in form.std.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.std(style="height: 25px; width: 100px;") }}<br>
+                {% endif %}
+            </div>
+            <div>
+                <br><br>{{ form.submit(class='register-submit')}}
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}

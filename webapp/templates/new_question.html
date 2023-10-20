@@ -1,0 +1,95 @@
+{% extends 'index.html' %}
+<meta charset="UTF-8">
+{% block title%}
+    {{title}}
+{% endblock title%}
+
+{% block content %}
+<div class="sidenav" style="margin: 75px 125px 0 0; width: 300px; height: 500px;">
+    <p style="font-size: 32px; text-align: center;">Browse by Class</p>
+    <div style="line-height: 40px;">
+        <a style="font-size: 28px;" href="{{ url_for('class6') }}">Class 6</a>
+        <a style="font-size: 28px;" href="{{ url_for('class7') }}">Class 7</a>
+        <a style="font-size: 28px;" href="{{ url_for('class8') }}">Class 8</a>
+        <a style="font-size: 28px;" href="{{ url_for('class9') }}">Class 9</a>
+        <a style="font-size: 28px;" href="{{ url_for('class10') }}">Class 10</a>
+        <a style="font-size: 28px;" href="{{ url_for('class11') }}">Class 11</a>
+        <a style="font-size: 28px;" href="{{ url_for('class12') }}">Class 12</a>
+    </div>
+    <br>
+</div>
+<form action="#" method="POST" enctype="multipart/form-data" autocomplete="off">
+    {{ form.hidden_tag() }}
+    <div class="profile-section" style="height: 800px; width: 650px;">
+        <h2 style="font-size: 30px; width: 600px; margin: -10px 0 40px 30px; padding-bottom:15px; border-bottom: 2px solid #bfbeba;">{{ legend }}</h2>
+        <div class="form-field" style="margin-left: 30px;">
+            {{ form.question.label(style="align: center;") }}<br>
+
+            {% if form.question.errors %}
+            {{ form.question(style="height: 50px; width: 500px; border: 1px solid red; align: center;") }}
+            <div class="invalid-feedback">
+                {% for error in form.question.errors %}
+                <span>{{ error }}</span><br>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{ form.question(style="height: 45px; width: 500px; border: 1px solid #5e5e5e; align: center;") }}<br><br>
+            {% endif %}
+        </div>
+        <div class="form-field" style="margin-left: 30px;">
+            {{ form.content.label(style="align: center;") }}<br>
+
+            {% if form.content.errors %}
+            {{ form.content(style="height: 180px; width: 500px; border: 1px solid red; align: center;") }}
+            <div class="invalid-feedback">
+                {% for error in form.content.errors %}
+                <span>{{ error }}</span><br>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{ form.content(style="height: 180px; width: 500px; border: 1px solid #5e5e5e; align: center;") }}<br><br>
+            {% endif %}
+        </div>
+        <div class="form-field" style="margin-left: 30px;">
+            {{ form.post_std.label(style="align: center;") }}<br>
+
+            {% if form.post_std.errors %}
+            {{ form.post_std(style="height: 25px; width: 100px; border: 1px solid red; align: center;") }}
+            <div class="invalid-feedback">
+                {% for error in form.post_std.errors %}
+                <span>{{ error }}</span><br>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{ form.post_std(style="height: 25px; border: 1px solid #5e5e5e; width: 100px; align: center;") }}<br><br>
+            {% endif %}
+        </div>
+        <div class="form-field" style="margin-left: 30px;">
+            {{ form.subject.label(style="align: center;") }}<br>
+
+            {% if form.subject.errors %}
+            {{ form.subject(style="height: 25px; width: 100px; border: 1px solid red; align: center;") }}
+            <div class="invalid-feedback">
+                {% for error in form.subject.errors %}
+                <span>{{ error }}</span><br>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{ form.subject(style="height: 25px; border: 1px solid #5e5e5e; width: 100px; align: center;") }}<br><br>
+            {% endif %}
+        </div>
+        <div class="form-field" style="margin-left: 30px;">
+            {{ form.post_image.label(style='align: center;') }}<br>
+            {{ form.post_image() }}
+            {% if form.post_image.errors %}
+                {% for error in form.post_image.errors %}
+                <span class="invalid-feedback">{{ error }}</span><br>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div>
+            <br><br>{{ form.submit(class='login-submit', style='margin: 10px 0 0 30px;') }}
+        </div>
+    </div>
+</form>
+{% endblock content %}

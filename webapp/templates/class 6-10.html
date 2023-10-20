@@ -1,0 +1,24 @@
+{% extends 'doubtville.html' %}
+<meta charset="UTF-8">
+{% block title%}
+    {% if title %}
+        {{ title }}
+    {% else %}
+        <title>Class</title>
+    {% endif %}
+{% endblock title%}
+{% block content %}
+    <h1 style="margin: 60px 0 0 600px; font-size: 40px;">Select subject</h1>
+    <div style="display: inline-block;">
+        <a href="#"><img src="./static/Icons/maths.png" alt="Maths" style="height: 155px; width: 155px; margin: 100px 0 0 200px; border-radius: 15px; box-shadow: 0px 2px 16px 3px rgba(0,0,0,0.2);"/></a>
+        <a href="#"><img src="./static/Icons/physics.png" alt="Physics" style="height: 150px; width: 150px; padding: 5px; margin: 100px 0 0 150px; border-radius: 15px; box-shadow: 0px 2px 16px 3px rgba(0,0,0,0.2);"/></a>
+        <a href="#"><img src="./static/Icons/chemistry.png" alt="Chemistry" style="height: 150px; width: 150px; padding: 5px; margin: 100px 0 0 150px; border-radius: 15px; box-shadow: 0px 2px 16px 3px rgba(0,0,0,0.2);"/></a>
+        <a href="#"><img src="./static/Icons/biology.png" alt="Biology" style="height: 150px; width: 150px; padding: 5px; margin: 100px 0 0 150px; border-radius: 15px; box-shadow: 0px 2px 16px 3px rgba(0,0,0,0.2);"/></a>
+    </div>
+    <div style="display: inline;">
+        <h2 style="margin-left: 245px; line-height: 10px;">Maths</h2>
+        <h2 style="margin: -30px 0 0 555px; line-height: 10px;">Physics</h2>
+        <h2 style="margin: -10px 0 0 855px; line-height: 10px;">Chemistry</h2>
+        <h2 style="margin: -10px 0 0 1180px; line-height: 10px;">Biology</h2>
+    </div>
+{% endblock %}

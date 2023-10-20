@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+<meta charset="UTF-8">
+{% block title%}
+  DoubtVille
+{% endblock title%}
+
+{% block content %}
+  <h1 style=" margin: 50px 0 0 550px; font-size: 40px;">Browse content by class</h1>
+  <p style="margin-left: 590px; font-size: 25px; color: #807f7d; line-height: 0px;">Only main subjects are included</p>
+  <a href="{{ url_for('class6') }}"><img src="./static/Icons/class6.png" alt="Class 6" style="height: 150px; width: 150px; margin: 60px 0 0 200px; border-radius: 30px; box-shadow: 0px 2px 16px 3px rgba(0,0,0,0.2);"/></a>
+  <a href="{{ url_for('class7') }}"><img src="./static/Icons/class7.png" alt="Class 7" style="height: 150px; width: 150px; margin: 60px 0 0 155px; border-radius: 30px; box-shadow: 0px 2px 16px 3px rgba(0,0,0,0.2);"/></a>
+  <a href="{{ url_for('class8') }}"><img src="./static/Icons/class8.png" alt="Class 8" style="height: 150px; width: 150px; margin: 60px 0 0 155px; border-radius: 30px; box-shadow: 0px 2px 16px 3px rgba(0,0,0,0.2);"/></a>
+  <a href="{{ url_for('class9') }}"><img src="./static/Icons/class9.png" alt="Class 9" style="height: 150px; width: 150px; margin: 60px 0 0 155px; border-radius: 30px; box-shadow: 0px 2px 16px 3px rgba(0,0,0,0.2);"/></a>
+  <a href="{{ url_for('class10') }}"><img src="./static/Icons/class10.png" alt="Class 10" style="height: 150px; width: 150px; margin: 50px 0 0 352px; border-radius: 30px; box-shadow: 0px 2px 16px 3px rgba(0,0,0,0.2);"/></a>
+  <a href="{{ url_for('class11') }}"><img src="./static/Icons/class11.png" alt="Class 11" style="height: 150px; width: 150px; margin: 50px 0 0 152px; border-radius: 30px; box-shadow: 0px 2px 16px 3px rgba(0,0,0,0.2);"/></a>
+  <a href="{{ url_for('class12') }}"><img src="./static/Icons/class12.png" alt="Class 12" style="height: 150px; width: 150px; margin: 50px 0 0 152px; border-radius: 30px; box-shadow: 0px 2px 16px 3px rgba(0,0,0,0.2);"/></a>
+{% endblock content%}
